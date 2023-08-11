@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C5D57C7E-8186-4B2A-BED5-F47819B275F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5CF81C74-9947-41B4-A419-51ED74BE61CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AE7A713E-E4F6-4215-87D4-600957CA3D07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{3F4B225D-6C65-41F4-AB2E-554DC816BDEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.API", "Alazani.API\Alazani.API.csproj", "{5A59CD30-190F-43B0-B4C0-FD8A39D7074F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Domain", "Alazani.Domain\Alazani.Domain.csproj", "{D36503C6-4885-43DF-B28A-57B00D2A0945}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Domain.Models", "Alazani.Domain.Models\Alazani.Domain.Models.csproj", "{6C5F91C0-50D3-48FD-8375-FA8073F1B8B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Domain.Repository", "Alazani.Domain.Repository\Alazani.Domain.Repository.csproj", "{205A6893-A0D3-4D28-A1B1-3E45A8C5CDE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Domain.Service", "Alazani.Domain.Service\Alazani.Domain.Service.csproj", "{F3DF5F49-53AB-47EB-B180-360B39B90A5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Infrastructure.Repository", "Alazani.Infrastructure.Repository\Alazani.Infrastructure.Repository.csproj", "{FE725D88-9017-45BC-9919-FBF68817A79E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Infrastructure.Service", "Alazani.Infrastructure.Service\Alazani.Infrastructure.Service.csproj", "{AC6E49FE-9D3B-46CB-995B-128692A84C7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Infrastructure.Migrations", "Alazani.Infrastructure.Migrations\Alazani.Infrastructure.Migrations.csproj", "{B6A39001-D40A-453F-8144-31F17C9CA1DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alazani.Shared", "Alazani.Shared\Alazani.Shared.csproj", "{158F4BE0-279A-40CB-BAF6-17363FBFED2F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{53E5C261-8CFB-4B35-83E9-5CDA58C4890D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A59CD30-190F-43B0-B4C0-FD8A39D7074F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A59CD30-190F-43B0-B4C0-FD8A39D7074F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A59CD30-190F-43B0-B4C0-FD8A39D7074F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A59CD30-190F-43B0-B4C0-FD8A39D7074F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36503C6-4885-43DF-B28A-57B00D2A0945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36503C6-4885-43DF-B28A-57B00D2A0945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36503C6-4885-43DF-B28A-57B00D2A0945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36503C6-4885-43DF-B28A-57B00D2A0945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5F91C0-50D3-48FD-8375-FA8073F1B8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5F91C0-50D3-48FD-8375-FA8073F1B8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5F91C0-50D3-48FD-8375-FA8073F1B8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5F91C0-50D3-48FD-8375-FA8073F1B8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{205A6893-A0D3-4D28-A1B1-3E45A8C5CDE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{205A6893-A0D3-4D28-A1B1-3E45A8C5CDE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{205A6893-A0D3-4D28-A1B1-3E45A8C5CDE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{205A6893-A0D3-4D28-A1B1-3E45A8C5CDE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3DF5F49-53AB-47EB-B180-360B39B90A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3DF5F49-53AB-47EB-B180-360B39B90A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3DF5F49-53AB-47EB-B180-360B39B90A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3DF5F49-53AB-47EB-B180-360B39B90A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE725D88-9017-45BC-9919-FBF68817A79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE725D88-9017-45BC-9919-FBF68817A79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE725D88-9017-45BC-9919-FBF68817A79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE725D88-9017-45BC-9919-FBF68817A79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6E49FE-9D3B-46CB-995B-128692A84C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6E49FE-9D3B-46CB-995B-128692A84C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6E49FE-9D3B-46CB-995B-128692A84C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6E49FE-9D3B-46CB-995B-128692A84C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A39001-D40A-453F-8144-31F17C9CA1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A39001-D40A-453F-8144-31F17C9CA1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A39001-D40A-453F-8144-31F17C9CA1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A39001-D40A-453F-8144-31F17C9CA1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{158F4BE0-279A-40CB-BAF6-17363FBFED2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158F4BE0-279A-40CB-BAF6-17363FBFED2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158F4BE0-279A-40CB-BAF6-17363FBFED2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158F4BE0-279A-40CB-BAF6-17363FBFED2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53E5C261-8CFB-4B35-83E9-5CDA58C4890D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53E5C261-8CFB-4B35-83E9-5CDA58C4890D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53E5C261-8CFB-4B35-83E9-5CDA58C4890D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53E5C261-8CFB-4B35-83E9-5CDA58C4890D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A59CD30-190F-43B0-B4C0-FD8A39D7074F} = {C5D57C7E-8186-4B2A-BED5-F47819B275F7}
+		{D36503C6-4885-43DF-B28A-57B00D2A0945} = {5CF81C74-9947-41B4-A419-51ED74BE61CB}
+		{6C5F91C0-50D3-48FD-8375-FA8073F1B8B7} = {5CF81C74-9947-41B4-A419-51ED74BE61CB}
+		{205A6893-A0D3-4D28-A1B1-3E45A8C5CDE8} = {5CF81C74-9947-41B4-A419-51ED74BE61CB}
+		{F3DF5F49-53AB-47EB-B180-360B39B90A5D} = {5CF81C74-9947-41B4-A419-51ED74BE61CB}
+		{FE725D88-9017-45BC-9919-FBF68817A79E} = {AE7A713E-E4F6-4215-87D4-600957CA3D07}
+		{AC6E49FE-9D3B-46CB-995B-128692A84C7F} = {AE7A713E-E4F6-4215-87D4-600957CA3D07}
+		{B6A39001-D40A-453F-8144-31F17C9CA1DA} = {AE7A713E-E4F6-4215-87D4-600957CA3D07}
+		{158F4BE0-279A-40CB-BAF6-17363FBFED2F} = {3F4B225D-6C65-41F4-AB2E-554DC816BDEC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B5A222F-0A21-4E19-BFAC-97C6505795C6}
+	EndGlobalSection
+EndGlobal

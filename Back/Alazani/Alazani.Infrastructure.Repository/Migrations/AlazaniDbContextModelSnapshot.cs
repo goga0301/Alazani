@@ -312,7 +312,8 @@ namespace Alazani.Infrastructure.Repository.Migrations
                         .WithMany("Categories")
                         .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Org_Categories");
                 });
 
             modelBuilder.Entity("Alazani.Domain.Entities.Price", b =>
@@ -321,13 +322,15 @@ namespace Alazani.Infrastructure.Repository.Migrations
                         .WithMany()
                         .HasForeignKey("CurrencyId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Currency_Prices");
 
                     b.HasOne("Alazani.Domain.Entities.Product", null)
                         .WithMany("Prices")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Product_Prices");
 
                     b.Navigation("Currency");
                 });
@@ -338,13 +341,15 @@ namespace Alazani.Infrastructure.Repository.Migrations
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Category_Products");
 
                     b.HasOne("Alazani.Domain.Entities.Organization", null)
                         .WithMany("Products")
                         .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Org_Products");
 
                     b.Navigation("Category");
                 });
@@ -355,7 +360,8 @@ namespace Alazani.Infrastructure.Repository.Migrations
                         .WithMany("Roles")
                         .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Org_Roles");
                 });
 
             modelBuilder.Entity("Alazani.Domain.Entities.User", b =>
@@ -364,13 +370,15 @@ namespace Alazani.Infrastructure.Repository.Migrations
                         .WithMany("Users")
                         .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Org_Users");
 
                     b.HasOne("Alazani.Domain.Entities.Role", null)
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("FK_Role_Users");
                 });
 
             modelBuilder.Entity("Alazani.Domain.Entities.Category", b =>

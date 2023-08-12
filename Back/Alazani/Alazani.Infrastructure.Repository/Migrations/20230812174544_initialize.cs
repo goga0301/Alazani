@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -80,7 +81,7 @@ namespace Alazani.Infrastructure.Repository.Migrations
                 {
                     table.PrimaryKey("PK_Category", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Category_Organization_Orga~",
+                        name: "FK_Org_Categories",
                         column: x => x.OrganizationId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Organization",
@@ -104,7 +105,7 @@ namespace Alazani.Infrastructure.Repository.Migrations
                 {
                     table.PrimaryKey("PK_Role", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Role_Organization_Organiza~",
+                        name: "FK_Org_Roles",
                         column: x => x.OrganizationId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Organization",
@@ -129,14 +130,14 @@ namespace Alazani.Infrastructure.Repository.Migrations
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Product_Category_CategoryId",
+                        name: "FK_Category_Products",
                         column: x => x.CategoryId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Category",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Product_Organization_Organ~",
+                        name: "FK_Org_Products",
                         column: x => x.OrganizationId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Organization",
@@ -161,14 +162,14 @@ namespace Alazani.Infrastructure.Repository.Migrations
                 {
                     table.PrimaryKey("PK_User", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_User_Organization_Organiza~",
+                        name: "FK_Org_Users",
                         column: x => x.OrganizationId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Organization",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_User_Role_RoleId",
+                        name: "FK_Role_Users",
                         column: x => x.RoleId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Role",
@@ -193,14 +194,14 @@ namespace Alazani.Infrastructure.Repository.Migrations
                 {
                     table.PrimaryKey("PK_Price", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Price_Currency_CurrencyId",
+                        name: "FK_Currency_Prices",
                         column: x => x.CurrencyId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Currency",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Price_Product_ProductId",
+                        name: "FK_Product_Prices",
                         column: x => x.ProductId,
                         principalSchema: "AlazaniDb",
                         principalTable: "Product",

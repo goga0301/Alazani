@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  alazanidb:
+    image: postgres
+
+  pgadmin:
+    image: dpage/pgadmin4
+
+  alazani.api:
+    image: ${DOCKER_REGISTRY-}alazaniapi
+    build:
+      context: .
+      dockerfile: Alazani.API/Dockerfile
+
+
+
+volumes:
+  postgres_data:
+  pgadmin_data:  

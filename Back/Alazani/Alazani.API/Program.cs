@@ -1,10 +1,6 @@
 using Alazani.API.Middlewares;
 using Alazani.API.Options;
 using Alazani.Infrastructure.Repository;
-using Alazani.Infrastructure.Repository.DbContexts;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

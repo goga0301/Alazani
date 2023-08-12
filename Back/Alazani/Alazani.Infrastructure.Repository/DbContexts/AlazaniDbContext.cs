@@ -1,7 +1,6 @@
 ﻿using Alazani.Domain.Entities;
 using Alazani.Infrastructure.Repository.Configurations;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace Alazani.Infrastructure.Repository.DbContexts
 {

@@ -24,30 +24,16 @@ services:
     volumes:
       - pgadmin_data:/root/.pgadmin
 
-  # portainer:
-  #   container_name: portainer
-  #   restart: always
-  #   ports:
-  #     - "8080:8000"
-  #     - "9000:9000"
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - portainer_data:/data
-
   alazani.api:
     container_name: alazani.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "DatabaseOptions:ConnectionString=Server=alazanidb;Database=alazanidb;User Id=admin;Password=admin1234;"
+      - "DatabaseOptions:ConnectionString=Host=127.0.0.1;Port=5432;Server=alazanidb;Database=alazanidb;User Id=admin;Password=admin1234;"
     ports:
       - "8002:80"
     depends_on:
       - alazanidb
 
-  alazaniapp:
-    container_name: alazaniapp
-    ports:
-      - "5000:80"
 
 
     

@@ -13,7 +13,7 @@ public static class Extentions
         {
             x.UseNpgsql(configuration.GetSection("DatabaseSettings:ConnectionString").Value,
                         b => b.MigrationsAssembly("Alazani.Infrastructure.Repository"));
-            
+
         });
     }
 
@@ -24,7 +24,7 @@ public static class Extentions
             using (var context = scope.ServiceProvider.GetRequiredService<AlazaniDbContext>())
             {
                 context.Database.SetConnectionString(serviceProvider.GetRequiredService<IConfiguration>()
-                                       .GetSection("DatabaseOptions:ConnectionString").Value);
+                                   .GetSection("DatabaseOptions:ConnectionString").Value);
                 context.Database.Migrate();
             }
         }

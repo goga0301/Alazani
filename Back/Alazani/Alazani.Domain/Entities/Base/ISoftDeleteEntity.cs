@@ -1,9 +1,8 @@
 ﻿using Alazani.Domain.Entities.Enums;
 
-namespace Alazani.Domain.Entities.Base
+namespace Alazani.Domain.Entities.Base;
+
+public interface ISoftDeleteEntity
 {
-    public interface ISoftDeleteEntity
-    {
-        RecordStatusEnum RecordStatus { get; set; }
-    }
+    RecordStatusEnum RecordStatus { get; set; }
 }

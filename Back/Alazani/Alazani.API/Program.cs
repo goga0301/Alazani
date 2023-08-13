@@ -1,6 +1,7 @@
 using Alazani.API.Middlewares;
 using Alazani.API.Options;
 using Alazani.Infrastructure.Repository;
+using Alazani.Infrastructure.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 
 builder.Services.AddDbContexts(builder.Configuration);
+builder.Services.AddDomainServices();
+builder.Services.AddRepositories();
+
 
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
@@ -40,16 +44,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
-
-//using (var scope = app.Services.CreateScope())
-//{
-//    using (var context = scope.ServiceProvider.GetRequiredService<AlazaniDbContext>())
-//    {
-//        context.Database.GetConnectionString();
-//        context.Database.SetConnectionString(app.Configuration.GetSection("DatabaseOptions:ConnectionString").Value)
-//        context.Database.Migrate();
-//    }
-//}
 
 app.MapControllers();
 

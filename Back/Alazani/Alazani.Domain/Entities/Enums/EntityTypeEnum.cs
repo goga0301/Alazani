@@ -1,7 +1,6 @@
-﻿namespace Alazani.Domain.Entities.Enums
+﻿namespace Alazani.Domain.Entities.Enums;
+
+public enum EntityTypeEnum : short
 {
-    public enum EntityTypeEnum : short
-    {
-        Product = 1
-    }
+    Product = 1
 }

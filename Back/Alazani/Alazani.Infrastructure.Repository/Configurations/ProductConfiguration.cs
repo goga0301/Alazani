@@ -3,13 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Store.Infrastructure.Repository.Configurations.Base;
 
-namespace Alazani.Infrastructure.Repository.Configurations
+namespace Alazani.Infrastructure.Repository.Configurations;
+
+public class ProductConfiguration : BaseEntityConfiguration<Product, int>
 {
-    public class ProductConfiguration : BaseEntityConfiguration<Product, int>
+    public override void ConfigureEntity(EntityTypeBuilder<Product> builder)
     {
-        public override void ConfigureEntity(EntityTypeBuilder<Product> builder)
-        {
-            builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId).HasConstraintName("FK_Category_Products");
-        }
+        builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId).HasConstraintName("FK_Category_Products");
     }
 }

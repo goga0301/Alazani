@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.10">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <ProjectReference Include="..\Alazani.Domain.Repository\Alazani.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Alazani.Domain.Service\Alazani.Domain.Service.csproj" />
+    <ProjectReference Include="..\Alazani.Shared\Alazani.Shared.csproj" />
   </ItemGroup>
 
 </Project>

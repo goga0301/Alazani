@@ -20,10 +20,8 @@ namespace Alazani.Infrastructure.Repository.Configurations
             builder.Property(x => x.PhoneNumber).HasColumnType("varchar(20)").HasMaxLength(20).IsRequired();
             builder.Property(x => x.EmailAddress).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
 
-            // Add email validation using regular expression
-            builder.Property(x => x.EmailAddress)
-                   .HasAnnotation("RegularExpression", @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$")
-                   .HasAnnotation("RegularExpressionErrorMessage", "Invalid email address format.");
+            
+            builder.ToTable(t => t.HasCheckConstraint("CK_Customer_EmailAddress", "\"EmailAddress\" ~ '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$'"));
         }
     }
 }

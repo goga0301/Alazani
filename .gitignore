@@ -371,3 +371,6 @@ FodyWeavers.xsd
 **/obj/Debug/
 
 /Front/Alazani/Alazani-app/.vscode
+Migrations/
+/Back/Alazani/Alazani.Infrastructure.Repository/Migrations/
+/Back/Alazani/Alazani.Infrastructure.Repository/Migrations/AlazaniDbContextModelSnapshot.cs

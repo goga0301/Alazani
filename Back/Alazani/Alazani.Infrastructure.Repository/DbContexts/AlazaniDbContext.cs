@@ -6,7 +6,6 @@ namespace Alazani.Infrastructure.Repository.DbContexts;
 
 public class AlazaniDbContext : DbContext
 {
-    public DbSet<Test> Tests { get; set; }
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Role> Roles { get; set; }
@@ -15,7 +14,6 @@ public class AlazaniDbContext : DbContext
     public DbSet<Price> Prices { get; set; }
     public DbSet<Currency> Currencies { get; set; }
     public DbSet<Customer> Customers { get; set; }
-    public DbSet<test1> aa { get; set; }
 
     public AlazaniDbContext(DbContextOptions<AlazaniDbContext> options) : base(options)
     {
@@ -25,7 +23,7 @@ public class AlazaniDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema("AlazaniDb");
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(TestConfiguration).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrganizationConfiguration).Assembly);
         modelBuilder.Model.SetMaxIdentifierLength(30);
 
         foreach (var entity in modelBuilder.Model.GetEntityTypes())

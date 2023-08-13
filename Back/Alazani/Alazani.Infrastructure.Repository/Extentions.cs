@@ -14,7 +14,11 @@ public static class Extentions
         services.AddDbContext<AlazaniDbContext>(x =>
         {
             x.UseNpgsql(configuration.GetSection("DatabaseOptions:ConnectionString").Value,
-                        b => b.MigrationsAssembly("Alazani.Infrastructure.Repository"));
+                        b =>
+                        {
+                            b.MigrationsHistoryTable("EF_Migrations", "AlazaniDb");
+                            b.MigrationsAssembly("Alazani.Infrastructure.Repository");
+                        });
 
         });
     }

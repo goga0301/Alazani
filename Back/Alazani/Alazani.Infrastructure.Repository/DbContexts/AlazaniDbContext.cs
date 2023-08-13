@@ -14,6 +14,8 @@ public class AlazaniDbContext : DbContext
     public DbSet<Category> Categories { get; set; }
     public DbSet<Price> Prices { get; set; }
     public DbSet<Currency> Currencies { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<test1> aa { get; set; }
 
     public AlazaniDbContext(DbContextOptions<AlazaniDbContext> options) : base(options)
     {

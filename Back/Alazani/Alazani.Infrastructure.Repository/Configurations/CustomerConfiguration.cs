@@ -14,11 +14,11 @@ namespace Alazani.Infrastructure.Repository.Configurations
     {
         public override void ConfigureEntity(EntityTypeBuilder<Customer> builder)
         {
-            builder.Property(x => x.FirstName).HasColumnType("nvarchar(50)").HasMaxLength(50).IsRequired();
-            builder.Property(x => x.LastName).HasColumnType("nvarchar(50)").HasMaxLength(50).IsRequired();
-            builder.Property(x => x.Password).HasColumnType("nvarchar(50)").HasMaxLength(50).IsRequired();
-            builder.Property(x => x.PhoneNumber).HasColumnType("nvarchar(20)").HasMaxLength(20).IsRequired();
-            builder.Property(x => x.EmailAddress).HasColumnType("nvarchar(50)").HasMaxLength(50).IsRequired();
+            builder.Property(x => x.FirstName).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
+            builder.Property(x => x.LastName).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
+            builder.Property(x => x.Password).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
+            builder.Property(x => x.PhoneNumber).HasColumnType("varchar(20)").HasMaxLength(20).IsRequired();
+            builder.Property(x => x.EmailAddress).HasColumnType("varchar(50)").HasMaxLength(50).IsRequired();
 
             // Add email validation using regular expression
             builder.Property(x => x.EmailAddress)

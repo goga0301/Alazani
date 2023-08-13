@@ -11,7 +11,6 @@ public class AlazaniDbContext : DbContext
     public DbSet<Role> Roles { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }
-    public DbSet<Price> Prices { get; set; }
     public DbSet<Currency> Currencies { get; set; }
     public DbSet<Customer> Customers { get; set; }
 

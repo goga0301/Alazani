@@ -1,9 +1,8 @@
-﻿namespace Alazani.Domain.Entities.Enums
+﻿namespace Alazani.Domain.Entities.Enums;
+
+public enum ChangeTypeEnum : byte
 {
-    public enum ChangeTypeEnum : byte
-    {
-        Create = 1,
-        Update = 2,
-        Delete = 3
-    }
+    Create = 1,
+    Update = 2,
+    Delete = 3
 }

@@ -1,13 +1,12 @@
 ﻿using Alazani.Domain.Entities.Base;
 
-namespace Alazani.Domain.Entities
+namespace Alazani.Domain.Entities;
+
+public class Price : BaseEntity<int>
 {
-    public class Price : BaseEntity<int>
-    {
-        public int ProductId { get; set; }
-        public int CurrencyId { get; set; }
+    public int ProductId { get; set; }
+    public int CurrencyId { get; set; }
 
-        public virtual Currency Currency { get; set; }
+    public virtual Currency Currency { get; set; }
 
-    }
 }

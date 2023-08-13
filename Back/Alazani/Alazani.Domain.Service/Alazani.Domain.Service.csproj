@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Alazani.Domain.Models\Alazani.Domain.Models.csproj" />
+    <ProjectReference Include="..\Alazani.Domain\Alazani.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

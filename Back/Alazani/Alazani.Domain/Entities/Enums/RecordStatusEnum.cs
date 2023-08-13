@@ -1,8 +1,7 @@
-﻿namespace Alazani.Domain.Entities.Enums
+﻿namespace Alazani.Domain.Entities.Enums;
+
+public enum RecordStatusEnum : byte
 {
-    public enum RecordStatusEnum : byte
-    {
-        Active = 1,
-        Deleted = 2
-    }
+    Active = 1,
+    Deleted = 2
 }

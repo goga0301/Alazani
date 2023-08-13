@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Alazani.Domain.Repository\Alazani.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Alazani.Domain.Service\Alazani.Domain.Service.csproj" />
+    <ProjectReference Include="..\Alazani.Shared\Alazani.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Alazani.Infrastructure.Repository\Alazani.Infrastructure.Repository.csproj" />
+    <ProjectReference Include="..\Alazani.Infrastructure.Service\Alazani.Infrastructure.Service.csproj" />
   </ItemGroup>
 
 </Project>

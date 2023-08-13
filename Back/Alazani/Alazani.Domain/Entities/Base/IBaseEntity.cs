@@ -1,7 +1,6 @@
 ﻿
-namespace Alazani.Domain.Entities.Base
+namespace Alazani.Domain.Entities.Base;
+
+public interface IBaseEntity : ISoftDeleteEntity
 {
-    public interface IBaseEntity : ISoftDeleteEntity
-    {
-    }
 }

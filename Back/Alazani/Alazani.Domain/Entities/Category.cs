@@ -1,11 +1,10 @@
 ﻿using Alazani.Domain.Entities.Base;
 
-namespace Alazani.Domain.Entities
-{
-    public class Category : BaseEntity<int>
-    {
-        public int OrganizationId { get; set; }
+namespace Alazani.Domain.Entities;
 
-        public virtual List<Product> Products { get; set; }
-    }
+public class Category : BaseEntity<int>
+{
+    public int OrganizationId { get; set; }
+
+    public virtual List<Product> Products { get; set; }
 }

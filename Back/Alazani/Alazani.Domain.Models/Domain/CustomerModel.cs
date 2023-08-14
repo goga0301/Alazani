@@ -10,7 +10,7 @@ public record CustomerModel(int Id,
                             string Password,
                             RecordStatusEnum RecordStatus,
                             DateTimeOffset CreateDate,
-                            string CreatorUserId);
+                            string CreateUserId);
 
 public record CreateCustomerModel(string FirstName,
                                   string LastName,

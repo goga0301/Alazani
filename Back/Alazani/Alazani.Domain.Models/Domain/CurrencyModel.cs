@@ -10,5 +10,5 @@ public record CurrencyModel(int Id,
                             string CreatorUserId);
 
 public record CreateCurrencyModel(string Name, decimal Rate);
-public record UpdateCurrenctyModel(int Id, string Name, decimal Rate);
+public record UpdateCurrencyModel(int Id, string Name, decimal Rate);
 public record DeleteCurrencyModel(int Id);

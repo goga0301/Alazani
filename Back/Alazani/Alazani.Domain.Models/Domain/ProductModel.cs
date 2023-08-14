@@ -3,22 +3,22 @@
 namespace Alazani.Domain.Models.Domain;
 
 public record ProductModel(int Id,
-                         string Name,
-                         string Description,
-                         decimal Price,
-                         int Stock,
-                         int OrganizationId,
-                         int CategotyId,
-                         CurrencyModel Currency,
-                         RecordStatusEnum RecordStatus,
-                         DateTimeOffset CreateDate,
-                         string CreatorUserId);
+                           string Name, 
+                           string Description, 
+                           decimal Price, 
+                           int Stock, 
+                           int OrganizationId, 
+                           int CategoryId, 
+                           CurrencyModel Currency, 
+                           RecordStatusEnum RecordStatus, 
+                           DateTimeOffset CreateDate, 
+                           string CreatorUserId); 
 public record CreateProductModel(string Name,
                                  string Description,
                                  decimal Price,
                                  int Stock,
                                  int OrganizationId,
-                                 int CategotyId,
+                                 int CategoryId,
                                  int CurrencyId);
 
 public record UpdateProductModel(int Id,
@@ -27,6 +27,6 @@ public record UpdateProductModel(int Id,
                                  decimal Price,
                                  int Stock,
                                  int OrganizationId,
-                                 int CategotyId,
+                                 int CategoryId,
                                  int CurrencyId);
 public record DeleteProductModel(int Id);

@@ -18,4 +18,6 @@ public class User : BaseEntity<int>
     public int Status { get; set; }
     public int RoleId { get; set; } 
     public int OrganizationId { get; set; }
+
+    public virtual Role? Role { get; set; }
 }

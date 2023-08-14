@@ -20,6 +20,6 @@ public class ProductConfiguration : BaseEntityConfiguration<Product, int>
         builder.Property(x => x.OrganizationId).HasColumnType("bigint").IsRequired();
 
         builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId).HasConstraintName("FK_Category_Products");
-        builder.HasOne<Currency>().WithMany().HasForeignKey(x => x.CurrencyId).HasConstraintName("FK_Currency_Products");
+        builder.HasOne(x => x.Currency).WithMany().HasForeignKey(x => x.CurrencyId).HasConstraintName("FK_Currency_Products");
     }
 }

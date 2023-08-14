@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Organization.Handlers
+﻿namespace Alazani.Handlers.Organization.Handlers;
+
+public class CreateOrganizationHandler
 {
-    public class CreateOrganizationHandler
-    {
-    }
 }

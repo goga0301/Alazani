@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Currency.Queries
+﻿namespace Alazani.Handlers.Currency.Queries;
+
+public class GetCurrencyQuery
 {
-    public class GetCurrencyQuery
-    {
-    }
 }

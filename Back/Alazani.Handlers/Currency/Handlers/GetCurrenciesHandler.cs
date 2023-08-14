@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Currency.Handlers
+﻿namespace Alazani.Handlers.Currency.Handlers;
+
+public class GetCurrenciesHandler
 {
-    public class GetCurrenciesHandler
-    {
-    }
 }

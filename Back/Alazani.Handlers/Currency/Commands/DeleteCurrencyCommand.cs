@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Currency.Commands
+﻿namespace Alazani.Handlers.Currency.Commands;
+
+public class DeleteCurrencyCommand
 {
-    public class DeleteCurrencyCommand
-    {
-    }
 }

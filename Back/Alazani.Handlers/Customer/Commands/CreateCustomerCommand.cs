@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Customer.Commands
+﻿namespace Alazani.Handlers.Customer.Commands;
+
+public class CreateCustomerCommand
 {
-    public class CreateCustomerCommand
-    {
-    }
 }

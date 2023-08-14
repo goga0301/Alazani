@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Customer.Handlers
+﻿namespace Alazani.Handlers.Customer.Handlers;
+
+public class UpdateCustomerHandler
 {
-    public class UpdateCustomerHandler
-    {
-    }
 }

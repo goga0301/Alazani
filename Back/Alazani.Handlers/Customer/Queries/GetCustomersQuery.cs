@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Customer.Queries
+﻿namespace Alazani.Handlers.Customer.Queries;
+
+public class GetCustomersQuery
 {
-    public class GetCustomersQuery
-    {
-    }
 }

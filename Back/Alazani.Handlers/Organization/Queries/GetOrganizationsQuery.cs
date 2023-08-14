@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Organization.Queries
+﻿namespace Alazani.Handlers.Organization.Queries;
+
+public class GetOrganizationsQuery
 {
-    public class GetOrganizationsQuery
-    {
-    }
 }

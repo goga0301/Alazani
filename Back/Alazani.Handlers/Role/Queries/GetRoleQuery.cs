@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Role.Queries
+﻿namespace Alazani.Handlers.Role.Queries;
+
+public class GetRoleQuery
 {
-    public class GetRoleQuery
-    {
-    }
 }

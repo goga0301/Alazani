@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Role.Commands
+﻿namespace Alazani.Handlers.Role.Commands;
+
+public class CreateRoleCommand
 {
-    public class CreateRoleCommand
-    {
-    }
 }

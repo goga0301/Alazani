@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Category.Commands
+﻿namespace Alazani.Handlers.Category.Commands;
+
+public class DeleteCategoryCommand
 {
-    public class DeleteCategoryCommand
-    {
-    }
 }

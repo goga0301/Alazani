@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Organization.Commands
+﻿namespace Alazani.Handlers.Organization.Commands;
+
+public class DeleteOrganizationCommand
 {
-    public class DeleteOrganizationCommand
-    {
-    }
 }

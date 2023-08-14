@@ -1,6 +1,5 @@
-﻿namespace Alazani.Domain.Models.Mappers
+﻿namespace Alazani.Domain.Models.Mappers;
+
+public class ProductMapper
 {
-    public class ProductMapper
-    {
-    }
 }

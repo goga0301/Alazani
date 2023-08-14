@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Organization.Commands
+﻿namespace Alazani.Handlers.Organization.Commands;
+
+public class UpdateOrganizationCommand
 {
-    public class UpdateOrganizationCommand
-    {
-    }
 }

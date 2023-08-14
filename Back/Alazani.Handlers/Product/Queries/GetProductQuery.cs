@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Product.Queries
+﻿namespace Alazani.Handlers.Product.Queries;
+
+public class GetProductQuery
 {
-    public class GetProductQuery
-    {
-    }
 }

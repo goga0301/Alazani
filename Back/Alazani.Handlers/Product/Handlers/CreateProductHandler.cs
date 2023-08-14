@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Product.Handlers
+﻿namespace Alazani.Handlers.Product.Handlers;
+
+public class CreateProductHandler
 {
-    public class CreateProductHandler
-    {
-    }
 }

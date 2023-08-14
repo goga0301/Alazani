@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Role.Handlers
+﻿namespace Alazani.Handlers.Role.Handlers;
+
+public class CreateRoleHandler
 {
-    public class CreateRoleHandler
-    {
-    }
 }

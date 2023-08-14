@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.User.Handlers
+﻿namespace Alazani.Handlers.User.Handlers;
+
+public class GetUserHandler
 {
-    public class GetUserHandler
-    {
-    }
 }

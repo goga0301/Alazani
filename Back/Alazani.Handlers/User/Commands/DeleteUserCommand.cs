@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.User.Commands
+﻿namespace Alazani.Handlers.User.Commands;
+
+public class DeleteUserCommand
 {
-    public class DeleteUserCommand
-    {
-    }
 }

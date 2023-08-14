@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Category.Handlers
+﻿namespace Alazani.Handlers.Category.Handlers;
+
+public class GetCategoriesHandler
 {
-    public class GetCategoriesHandler
-    {
-    }
 }

@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.User.Queries
+﻿namespace Alazani.Handlers.User.Queries;
+
+public class GetUsersQuery
 {
-    public class GetUsersQuery
-    {
-    }
 }

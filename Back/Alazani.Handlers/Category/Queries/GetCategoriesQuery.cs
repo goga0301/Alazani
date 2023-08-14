@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Category.Queries
+﻿namespace Alazani.Handlers.Category.Queries;
+
+public class GetCategoriesQuery
 {
-    public class GetCategoriesQuery
-    {
-    }
 }

@@ -1,6 +1,5 @@
-﻿namespace Alazani.Handlers.Product.Commands
+﻿namespace Alazani.Handlers.Product.Commands;
+
+public class DeleteProductCommand
 {
-    public class DeleteProductCommand
-    {
-    }
 }

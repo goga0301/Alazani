@@ -2,6 +2,7 @@ using Alazani.API.Middlewares;
 using Alazani.API.Options;
 using Alazani.Infrastructure.Repository;
 using Alazani.Infrastructure.Service;
+using Alazani.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 
 builder.Services.AddDbContexts(builder.Configuration);
+builder.Services.AddApplication();
 builder.Services.AddDomainServices();
 builder.Services.AddRepositories();
 

@@ -9,3 +9,5 @@ public class CreateCategoryCommand : IRequest<IApiResponse<int>>
         Model = model;
     }
 }
+
+

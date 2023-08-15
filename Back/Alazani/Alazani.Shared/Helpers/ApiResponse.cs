@@ -10,7 +10,7 @@ public interface IApiResponse
     HttpStatusCode Status { get; }
     public IEnumerable<KeyValuePair<string, string?>>? Messages { get; }
 }
-public interface IApiResponse<T> : IApiResponse
+public interface IApiResponse<out T> : IApiResponse
 {
     T? Result { get; }
 }

@@ -11,9 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Alazani\Alazani.Domain.Models\Alazani.Domain.Models.csproj" />
-    <ProjectReference Include="..\Alazani\Alazani.Domain.Repository\Alazani.Domain.Repository.csproj" />
-    <ProjectReference Include="..\Alazani\Alazani.Shared\Alazani.Shared.csproj" />
+    <ProjectReference Include="..\Alazani.Domain.Models\Alazani.Domain.Models.csproj" />
+    <ProjectReference Include="..\Alazani.Domain.Repository\Alazani.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Alazani.Shared\Alazani.Shared.csproj" />
   </ItemGroup>
+
+
 
 </Project>

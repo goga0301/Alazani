@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Customer.Queries;
-
-namespace Alazani.Application.Features.Customer.Handlers;
+﻿namespace Alazani.Application.Features.Customer.Handlers;
 
 public class GetCustomerHandler : IRequestHandler<GetCustomerQuery, IApiResponse<CustomerModel>>
 {

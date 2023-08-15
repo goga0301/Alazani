@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Category.Queries;
-
-namespace Alazani.Application.Features.Category.Handlers;
+﻿namespace Alazani.Application.Features.Category.Handlers;
 
 public class GetCategoryHandler : IRequestHandler<GetCategoryQuery, IApiResponse<CategoryModel>>
 {

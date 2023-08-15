@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Role.Commands;
-
-namespace Alazani.Application.Features.Role.Handlers;
+﻿namespace Alazani.Application.Features.Role.Handlers;
 
 public class CreateRoleHandler : IRequestHandler<CreateRoleCommand, IApiResponse<int>>
 {

@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Currency.Commands;
-
-namespace Alazani.Application.Features.Currency.Handlers;
+﻿namespace Alazani.Application.Features.Currency.Handlers;
 
 public class CreateCurrencyHandler : IRequestHandler<CreateCurrencyCommand, IApiResponse<int>>
 {

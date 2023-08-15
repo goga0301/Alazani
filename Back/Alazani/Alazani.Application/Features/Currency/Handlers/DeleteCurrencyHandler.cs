@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Currency.Commands;
-
-namespace Alazani.Application.Features.Currency.Handlers;
+﻿namespace Alazani.Application.Features.Currency.Handlers;
 
 public class DeleteCurrencyHandler : IRequestHandler<DeleteCurrencyCommand, IApiResponse<bool>>
 {

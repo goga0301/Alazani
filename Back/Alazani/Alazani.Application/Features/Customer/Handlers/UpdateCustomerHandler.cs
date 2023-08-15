@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Customer.Commands;
-
-namespace Alazani.Application.Features.Customer.Handlers;
+﻿namespace Alazani.Application.Features.Customer.Handlers;
 
 public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerCommand, IApiResponse<bool>>
 {

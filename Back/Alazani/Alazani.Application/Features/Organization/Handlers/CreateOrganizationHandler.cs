@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Organization.Commands;
-
-namespace Alazani.Application.Features.Organization.Handlers;
+﻿namespace Alazani.Application.Features.Organization.Handlers;
 
 public class CreateOrganizationHandler : IRequestHandler<CreateOrganizationCommand, IApiResponse<int>>
 {

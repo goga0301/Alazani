@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Currency.Queries;
-
-namespace Alazani.Application.Features.Currency.Handlers;
+﻿namespace Alazani.Application.Features.Currency.Handlers;
 
 public class GetCurrenciesHandler : IRequestHandler<GetCurrenciesQuery, IApiResponse<IEnumerable<CurrencyModel>>>
 {

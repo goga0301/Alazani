@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Organization.Queries;
-
-namespace Alazani.Application.Features.Organization.Handlers;
+﻿namespace Alazani.Application.Features.Organization.Handlers;
 
 public class GetOrganizationHandler : IRequestHandler<GetOrganizationQuery, IApiResponse<OrganizationModel>>
 {

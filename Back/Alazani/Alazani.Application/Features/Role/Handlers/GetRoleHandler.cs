@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Role.Queries;
-
-namespace Alazani.Application.Features.Role.Handlers;
+﻿namespace Alazani.Application.Features.Role.Handlers;
 
 public class GetRoleHandler : IRequestHandler<GetRoleQuery, IApiResponse<RoleModel>>
 {

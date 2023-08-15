@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Product.Commands;
-
-namespace Alazani.Application.Features.Product.Handlers;
+﻿namespace Alazani.Application.Features.Product.Handlers;
 
 public class DeleteProductHandler : IRequestHandler<DeleteProductCommand, IApiResponse<bool>>
 {

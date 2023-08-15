@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.User.Queries;
-
-namespace Alazani.Application.Features.User.Handlers;
+﻿namespace Alazani.Application.Features.User.Handlers;
 
 public class GetUsersHandler : IRequestHandler<GetUsersQuery, IApiResponse<IEnumerable<UserModel>>>
 {

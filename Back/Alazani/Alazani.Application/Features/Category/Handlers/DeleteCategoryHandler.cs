@@ -1,6 +1,4 @@
-﻿using Alazani.Application.Features.Category.Commands;
-
-namespace Alazani.Application.Features.Category.Handlers;
+﻿namespace Alazani.Application.Features.Category.Handlers;
 
 public class DeleteCategoryHandler : IRequestHandler<DeleteCategoryCommand, IApiResponse<bool>>
 {

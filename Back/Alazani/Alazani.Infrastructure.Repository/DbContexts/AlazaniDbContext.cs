@@ -25,7 +25,6 @@ public class AlazaniDbContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(OrganizationConfiguration).Assembly);
         modelBuilder.Model.SetMaxIdentifierLength(30);
 
-        modelBuilder.UseHiLo();
 
         foreach (var entity in modelBuilder.Model.GetEntityTypes())
         {

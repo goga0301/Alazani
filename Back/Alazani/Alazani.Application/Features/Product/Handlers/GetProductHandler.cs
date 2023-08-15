@@ -1,0 +1,11 @@
+﻿using Alazani.Application.Features.Product.Queries;
+
+namespace Alazani.Application.Features.Product.Handlers;
+
+public class GetProductHandler : IRequestHandler<GetProductQuery, IApiResponse<ProductModel>>
+{
+    public async Task<IApiResponse<ProductModel>> Handle(GetProductQuery request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
+}

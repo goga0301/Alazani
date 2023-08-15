@@ -1,5 +1,5 @@
 ﻿namespace Alazani.Handlers.Role.Queries;
 
-public class GetRolesQuery
+public class GetRolesQuery : IRequest<IApiResponse<IEnumerable<RoleModel>>>
 {
 }

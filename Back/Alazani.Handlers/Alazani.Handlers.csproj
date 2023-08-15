@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alazani\Alazani.Domain.Models\Alazani.Domain.Models.csproj" />
+    <ProjectReference Include="..\Alazani\Alazani.Domain.Repository\Alazani.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Alazani\Alazani.Shared\Alazani.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

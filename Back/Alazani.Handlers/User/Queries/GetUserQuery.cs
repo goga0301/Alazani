@@ -1,5 +1,5 @@
 ﻿namespace Alazani.Handlers.User.Queries;
 
-public class GetUserQuery
+public class GetUserQuery : IRequest<IApiResponse<UserModel>>
 {
 }

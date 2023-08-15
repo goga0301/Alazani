@@ -13,7 +13,7 @@ public class Product : BaseEntity<int>
     public int CategoryId { get; set; }
     public int CurrencyId { get; set; }
 
-    public virtual Currency Currency { get; set; }
-    public virtual Category Category { get; set; }
+    public virtual Currency? Currency { get; set; }
+    public virtual Category? Category { get; set; }
 
 }

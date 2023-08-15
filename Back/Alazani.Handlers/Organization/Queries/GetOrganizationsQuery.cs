@@ -1,5 +1,5 @@
 ﻿namespace Alazani.Handlers.Organization.Queries;
 
-public class GetOrganizationsQuery
+public class GetOrganizationsQuery : IRequest<IApiResponse<IEnumerable<OrganizationModel>>>
 {
 }

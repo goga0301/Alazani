@@ -1,5 +1,5 @@
 ﻿namespace Alazani.Handlers.Product.Queries;
 
-public class GetProductsQuery
+public class GetProductsQuery : IRequest<IApiResponse<IEnumerable<ProductModel>>>
 {
 }

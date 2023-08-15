@@ -1,5 +1,9 @@
 ﻿namespace Alazani.Handlers.Role.Handlers;
 
-public class CreateRoleHandler
+public class CreateRoleHandler : IRequestHandler<CreateRoleCommand, IApiResponse<int>>
 {
+    public async Task<IApiResponse<int>> Handle(CreateRoleCommand request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
 }

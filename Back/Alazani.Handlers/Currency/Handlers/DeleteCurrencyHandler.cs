@@ -1,5 +1,11 @@
-﻿namespace Alazani.Handlers.Currency.Handlers;
+﻿using Alazani.Domain.Repository;
 
-public class DeleteCurrencyHandler
+namespace Alazani.Handlers.Currency.Handlers;
+
+public class DeleteCurrencyHandler : IRequestHandler<DeleteCurrencyCommand, IApiResponse<bool>>
 {
+    public async Task<IApiResponse<bool>> Handle(DeleteCurrencyCommand request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
 }

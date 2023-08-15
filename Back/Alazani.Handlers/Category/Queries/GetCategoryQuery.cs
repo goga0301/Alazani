@@ -1,5 +1,5 @@
 ﻿namespace Alazani.Handlers.Category.Queries;
 
-public class GetCategoryQuery
+public class GetCategoryQuery : IRequest<IApiResponse<CategoryModel>>
 {
 }

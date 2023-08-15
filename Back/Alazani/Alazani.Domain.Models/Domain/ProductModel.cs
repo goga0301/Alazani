@@ -9,7 +9,7 @@ public record ProductModel(int Id,
                            int Stock, 
                            int OrganizationId, 
                            int CategoryId, 
-                           CurrencyModel Currency, 
+                           CurrencyModel? Currency, 
                            RecordStatusEnum RecordStatus, 
                            DateTimeOffset CreateDate, 
                            string CreatorUserId); 

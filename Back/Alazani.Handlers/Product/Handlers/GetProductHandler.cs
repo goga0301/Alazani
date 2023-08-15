@@ -1,5 +1,9 @@
 ﻿namespace Alazani.Handlers.Product.Handlers;
 
-public class GetProductHandler
+public class GetProductHandler : IRequestHandler<GetProductQuery, IApiResponse<ProductModel>>
 {
+    public async Task<IApiResponse<ProductModel>> Handle(GetProductQuery request, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
 }

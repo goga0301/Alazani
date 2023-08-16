@@ -8,7 +8,7 @@ namespace Alazani.Application.Behaviours;
 public class ValidationPipelineBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
-    where TResponse : ApiResponse
+    where TResponse : class // ApiResponse
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
@@ -51,7 +51,7 @@ public class ValidationPipelineBehaviour<TRequest, TResponse>
     }
 
     private static TResult CreateValidation<TResult>(Error[] errors)
-        where TResult : ApiResponse
+        where TResult : class //ApiResponse
     {
         if (typeof(TResult) == typeof(ApiResponse))
         {

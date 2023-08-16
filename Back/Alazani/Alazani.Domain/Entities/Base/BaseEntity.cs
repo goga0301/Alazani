@@ -9,13 +9,13 @@ public abstract class BaseEntity<TKey> : IBaseEntity where TKey : struct
     public TKey Id { get; set; }
 
     public RecordStatusEnum RecordStatus { get; set; }
-    public DateTimeOffset CreateDate { get; set; }
+    public DateTime CreateDate { get; set; }
     public string CreateUserId { get; set; }
 
     public void Create(string createUserId)
     {
         RecordStatus = RecordStatusEnum.Active;
-        CreateDate = DateTimeOffset.Now;
+        CreateDate = DateTime.Now;
         CreateUserId = createUserId;
     }
 

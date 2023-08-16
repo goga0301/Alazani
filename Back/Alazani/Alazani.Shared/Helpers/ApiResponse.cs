@@ -68,6 +68,16 @@ public class ApiResponse : IApiResponse
             new KeyValuePair<string, string?>("InternalServerError",message)
         });
     }
+
+    public static IApiResponse Error(Exception exception)
+    {
+        var messages = new List<KeyValuePair<string, string?>>()
+        {
+            new KeyValuePair<string, string?>("Exception",exception.Message),
+            new KeyValuePair<string, string?>("InnerException",exception.InnerException?.Message)
+        };
+        return new ApiResponse(HttpStatusCode.InternalServerError, messages);
+    }
 }
 
 public class ApiResponse<T> : ApiResponse, IApiResponse<T>

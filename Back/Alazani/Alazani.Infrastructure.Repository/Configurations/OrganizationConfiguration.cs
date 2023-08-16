@@ -18,5 +18,8 @@ public class OrganizationConfiguration : BaseEntityConfiguration<Organization, i
         builder.HasMany(x => x.Products).WithOne().HasForeignKey(x => x.OrganizationId).HasConstraintName("FK_Org_Products");
         builder.HasMany(x => x.Categories).WithOne().HasForeignKey(x => x.OrganizationId).HasConstraintName("FK_Org_Categories");
 
+
+        builder.HasIndex(x => x.Name).IsUnique();
+
     }
 }

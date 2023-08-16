@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Alazani.Helpers;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using System.Net;
+using System.Text;
 using System.Text.Json;
 
 namespace Alazani.API.Middlewares;
@@ -18,48 +21,27 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         try
         {
             await next(context);
-        }catch (Exception ex)
+        }
+        catch (Exception ex)
         {
-            _logger.LogError(ex, ex.Message);
-            
-            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-            
-            ProblemDetails problemDetails = new()
+            _logger.LogError(ex, "Error Occured");
+
+            var response = ApiResponse.Error(ex);
+            var ErrorResponse = new
             {
+                Status = (int)HttpStatusCode.InternalServerError,
+                Type = "https://httpstatuses.com/500",
                 Title = "Internal Server Error",
-                Detail = "Internal Server Error Occured",
-                Status = context.Response.StatusCode,
-                Type = "https://httpstatuses.com/500"
+                Detail = "Internal Server Error Occured On Path: " + context.Request.Path,
+                Errors = response.Messages
             };
 
-            var json = JsonSerializer.Serialize(problemDetails);
-
-            await context.Response.WriteAsync(json);
+            var json = JsonSerializer.Serialize(ErrorResponse);
 
             context.Response.ContentType = "application/json";
+            context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            await context.Response.WriteAsync(json).ConfigureAwait(false);
 
-            //try
-            //{
-            //    await _next(context);
-            //}
-            //catch (Exception ex)
-            //{
-            //    logger.LogError(ex, "მოხდა შეცდომა");
-
-            //    try
-            //    {
-            //        var json = JsonSerializer.Serialize(ApiResponse.Error(ex.Message));
-
-            //        context.Response.ContentType = "application/json";
-            //        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-            //        await context.Response.WriteAsync(json).ConfigureAwait(false);
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        logger.LogError(e, "error occured after response has already started requestPath={requestPath}, parentException={parentEception}", context.Request.Path.Value, ex);
-            //    }
-            //}
         }
     }
 }

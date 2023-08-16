@@ -3,6 +3,6 @@ using Alazani.Domain.Repository.Base;
 
 namespace Alazani.Domain.Repository;
 
-public interface ICurrencyRepository : IGenericRepository<Currency,int>
+public interface ICurrencyRepository : IGenericRepository<Currency>
 {
 }

@@ -6,10 +6,10 @@ using System.Linq.Expressions;
 
 namespace Alazani.Infrastructure.Repository.Repositories.Base;
 
-public class CacheRepository<TContext, TEntity, TKey> : IGenericRepository<TEntity, TKey>, IDisposable where TContext : DbContext where TEntity : class where TKey : struct
+public class CacheRepository<TContext, TEntity> : IGenericRepository<TEntity>, IDisposable where TContext : DbContext where TEntity : class 
 {
 
-    private readonly GenericRepository<TContext, TEntity, TKey> _decorated;
+    private readonly GenericRepository<TContext, TEntity> _decorated;
     private readonly ExpirationTimeProvider _expirationTimeProvider;
     private readonly IMemoryCache _cache;
     public CacheRepository(TContext context, IMemoryCache cache,ExpirationTimeProvider expirationTimeProvider)
@@ -24,12 +24,12 @@ public class CacheRepository<TContext, TEntity, TKey> : IGenericRepository<TEnti
         return _decorated.AnyAsync(where);
     }
 
-    public Task<TKey> CreateAsync(TEntity entity, bool trackGraph = false)
+    public Task CreateAsync(TEntity entity, bool trackGraph = false)
     {
         return _decorated.CreateAsync(entity, trackGraph);
     }
 
-    public Task<IEnumerable<TKey>> CreateRange(IEnumerable<TEntity> entities, bool trackGraph = false)
+    public Task CreateRange(IEnumerable<TEntity> entities, bool trackGraph = false)
     {
         return _decorated.CreateRange(entities, trackGraph);
     }

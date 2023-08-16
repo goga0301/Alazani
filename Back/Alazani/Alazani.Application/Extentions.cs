@@ -14,9 +14,9 @@ public static class Extentions
         {
             config.RegisterServicesFromAssembly(typeof(Extentions).Assembly);
 
-            config.AddOpenBehavior(typeof(UnitOfWorkBehaviour<,>));
-
             config.AddOpenBehavior(typeof(ValidationPipelineBehaviour<,>));
+
+            config.AddOpenBehavior(typeof(UnitOfWorkBehaviour<,>));
         });
 
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true);

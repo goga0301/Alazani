@@ -3,6 +3,6 @@ using Alazani.Domain.Repository.Base;
 
 namespace Alazani.Domain.Repository;
 
-public interface IRoleRepository : IGenericRepository<Role,int>
+public interface IRoleRepository : IGenericRepository<Role>
 {
 }

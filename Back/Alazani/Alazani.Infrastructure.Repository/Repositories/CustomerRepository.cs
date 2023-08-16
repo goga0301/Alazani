@@ -5,7 +5,7 @@ using Alazani.Infrastructure.Repository.Repositories.Base;
 
 namespace Alazani.Infrastructure.Repository.Repositories;
 
-public class CustomerRepository : GenericRepository<AlazaniDbContext, Customer, int>, ICustomerRepository
+public class CustomerRepository : GenericRepository<AlazaniDbContext, Customer>, ICustomerRepository
 {
     public CustomerRepository(AlazaniDbContext context) : base(context)
     {

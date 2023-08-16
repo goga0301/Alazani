@@ -11,7 +11,7 @@ internal class CreateOrganizationCommandValidator : AbstractValidator<CreateOrga
             .MaximumLength(50).WithMessage("Name must not exceed 50 characters.");
 
         RuleFor(x => x.Model.Description)
-            .MaximumLength(5).WithMessage("Description must not exceed 500 characters.");
+            .MaximumLength(500).WithMessage("Description must not exceed 500 characters.");
 
         RuleFor(x => x.Model.Address)
             .MaximumLength(500).WithMessage("Address must not exceed 500 characters.");

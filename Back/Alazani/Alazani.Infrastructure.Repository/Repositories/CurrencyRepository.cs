@@ -5,7 +5,7 @@ using Alazani.Infrastructure.Repository.Repositories.Base;
 
 namespace Alazani.Infrastructure.Repository.Repositories;
 
-public class CurrencyRepository : GenericRepository<AlazaniDbContext, Currency, int>, ICurrencyRepository
+public class CurrencyRepository : GenericRepository<AlazaniDbContext, Currency>, ICurrencyRepository
 {
     public CurrencyRepository(AlazaniDbContext context) : base(context)
     {

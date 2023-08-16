@@ -65,6 +65,6 @@ public class ValidationPipelineBehaviour<TRequest, TResponse>
             .Invoke(null, new object?[] { errors })!;
 
         return (TResult)validationResult;
-        
+
     }
 }

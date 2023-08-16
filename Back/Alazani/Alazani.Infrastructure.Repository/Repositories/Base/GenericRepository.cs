@@ -9,7 +9,7 @@ using Alazani.Helpers;
 
 namespace Alazani.Infrastructure.Repository.Repositories.Base;
 
-public abstract class GenericRepository<TContext, TEntity, TKey> : IGenericRepository<TEntity, TKey>, IDisposable where TContext : DbContext where TEntity : class where TKey : struct
+public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<TEntity>, IDisposable where TContext : DbContext where TEntity : class 
 {
     protected readonly TContext _context;
 
@@ -63,7 +63,7 @@ public abstract class GenericRepository<TContext, TEntity, TKey> : IGenericRepos
         return await GetQueryable(where).AnyAsync().ConfigureAwait(false);
     }
 
-    public async Task<TKey> CreateAsync(TEntity entity, bool trackGraph = false)
+    public Task CreateAsync(TEntity entity, bool trackGraph = false)
     {
         if (trackGraph)
         {
@@ -73,14 +73,11 @@ public abstract class GenericRepository<TContext, TEntity, TKey> : IGenericRepos
         {
             _context.Entry(entity).State = EntityState.Added;
         }
-        await SaveChangesAsync();
-        return _context.Entry(entity).Property<TKey>("Id").CurrentValue;
-
+        return Task.CompletedTask;
     }
 
-    public async Task<IEnumerable<TKey>> CreateRange(IEnumerable<TEntity> entities, bool trackGraph = false) 
+    public async Task CreateRange(IEnumerable<TEntity> entities, bool trackGraph = false) 
     {
-        var result = new List<TKey>();
         if (trackGraph)
         {
             _context.Set<TEntity>().AddRange(entities);
@@ -89,10 +86,9 @@ public abstract class GenericRepository<TContext, TEntity, TKey> : IGenericRepos
         {
             foreach (var entity in entities)
             {
-                result.Add((await CreateAsync(entity)));
+                await CreateAsync(entity);
             }
         }
-        return result;
     }
 
     public void SoftDelete(TEntity entity, bool trackGraph = false)

@@ -23,7 +23,7 @@ public static class CurrencyMapper
             Name = model.Name,
             Rate = model.Rate,
             RecordStatus = RecordStatusEnum.Active,
-            CreateDate = DateTimeOffset.Now,
+            CreateDate = DateTime.UtcNow,
             CreateUserId = "Test"
         };
     }

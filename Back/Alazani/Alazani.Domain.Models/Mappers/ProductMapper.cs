@@ -33,7 +33,7 @@ public static class ProductMapper
             CategoryId = model.CategoryId,
             CurrencyId = model.CurrencyId,
             RecordStatus = RecordStatusEnum.Active,
-            CreateDate = DateTimeOffset.Now,
+            CreateDate = DateTime.UtcNow,
             CreateUserId = "Test"
         };
     }

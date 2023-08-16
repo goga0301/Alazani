@@ -11,7 +11,7 @@ public record ProductModel(int Id,
                            int CategoryId, 
                            CurrencyModel? Currency, 
                            RecordStatusEnum RecordStatus, 
-                           DateTimeOffset CreateDate, 
+                           DateTime CreateDate, 
                            string CreatorUserId); 
 public record CreateProductModel(string Name,
                                  string Description,

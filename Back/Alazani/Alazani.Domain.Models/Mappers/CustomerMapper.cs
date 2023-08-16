@@ -29,7 +29,7 @@ public static class CustomerMapper
             PhoneNumber = model.PhoneNumber,
             Password = model.Password,
             RecordStatus = RecordStatusEnum.Active,
-            CreateDate = DateTimeOffset.Now,
+            CreateDate = DateTime.UtcNow,
             CreateUserId = "Test"
         };
     }

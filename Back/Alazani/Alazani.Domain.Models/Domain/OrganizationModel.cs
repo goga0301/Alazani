@@ -11,7 +11,7 @@ public record OrganizationModel(int Id,
                                 List<RoleModel>? Roles,
                                 List<UserModel>? Users,
                                 RecordStatusEnum RecordStatus,
-                                DateTimeOffset CreateDate,
+                                DateTime CreateDate,
                                 string CreatorUserId);
 
 public record CreateOrganizationModel(string Name,

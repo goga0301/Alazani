@@ -6,7 +6,7 @@ public record CurrencyModel(int Id,
                             string Name,
                             decimal Rate,
                             RecordStatusEnum RecordStatus,
-                            DateTimeOffset CreateDate,
+                            DateTime CreateDate,
                             string CreatorUserId);
 
 public record CreateCurrencyModel(string Name, decimal Rate);

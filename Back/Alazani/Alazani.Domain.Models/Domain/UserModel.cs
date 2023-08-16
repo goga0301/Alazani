@@ -18,7 +18,7 @@ public record UserModel(int Id,
                         int OrganizationId,
                         RoleModel? Role,
                         RecordStatusEnum RecordStatus,
-                        DateTimeOffset CreateDate,
+                        DateTime CreateDate,
                         string CreatorUserId);
 public record CreateUserModel(string FirstName,
                               string LastName,  

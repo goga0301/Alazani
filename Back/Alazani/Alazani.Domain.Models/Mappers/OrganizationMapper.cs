@@ -29,7 +29,7 @@ public static class OrganizationMapper
             Description = model.Description,
             Address = model.Address,
             RecordStatus = RecordStatusEnum.Active,
-            CreateDate = DateTimeOffset.Now,
+            CreateDate = DateTime.UtcNow,
             CreateUserId = "Test"
         };
     }

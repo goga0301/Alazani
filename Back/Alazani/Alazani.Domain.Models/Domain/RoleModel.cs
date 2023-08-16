@@ -8,7 +8,7 @@ public record RoleModel(int Id,
                         string Description,
                         int OrganizationId,
                         RecordStatusEnum RecordStatus,
-                        DateTimeOffset CreateDate,
+                        DateTime CreateDate,
                         string CreatorUserId);
 public record CreateRoleModel(string Name,
                               string Description,

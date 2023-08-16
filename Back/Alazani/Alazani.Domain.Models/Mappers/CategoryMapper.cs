@@ -26,7 +26,7 @@ public static class CategoryMapper
             Description = model.Description,
             OrganizationId = model.OrganizationId,
             RecordStatus = RecordStatusEnum.Active,
-            CreateDate = DateTimeOffset.Now,
+            CreateDate = DateTime.UtcNow,
             CreateUserId = "Test"
         };
     }

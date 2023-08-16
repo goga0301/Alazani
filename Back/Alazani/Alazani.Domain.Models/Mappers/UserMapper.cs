@@ -47,7 +47,7 @@ public static class UserMapper
             OrganizationId = model.OrganizationId,
             RoleId = model.RoleId,
             RecordStatus = RecordStatusEnum.Active,
-            CreateDate = DateTimeOffset.Now,
+            CreateDate = DateTime.UtcNow,
             CreateUserId = "Test"
 
         };

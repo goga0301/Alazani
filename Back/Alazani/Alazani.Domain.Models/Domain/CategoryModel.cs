@@ -8,7 +8,7 @@ public record CategoryModel(int Id,
                             int OrganizationId,
                             List<ProductModel>? Products,
                             RecordStatusEnum RecordStatus,
-                            DateTimeOffset CreateDate,
+                            DateTime CreateDate,
                             string CreatorUserId);
 
 public record CreateCategoryModel(string Name, string Description, int OrganizationId);

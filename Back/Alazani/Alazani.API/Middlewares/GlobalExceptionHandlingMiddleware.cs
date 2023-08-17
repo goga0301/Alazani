@@ -32,7 +32,7 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
                 Status = (int)HttpStatusCode.InternalServerError,
                 Type = "https://httpstatuses.com/500",
                 Title = "Internal Server Error",
-                Detail = "Internal Server Error Occured On Path: " + context.Request.Path,
+                Detail = $"Internal Server Error Occured On Path: {context.Request.Method} - {context.Request.Path}",
                 Errors = response.Messages
             };
 

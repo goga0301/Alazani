@@ -26,13 +26,13 @@ public class UserConfiguration : BaseEntityConfiguration<User, int>
         builder.Property(x => x.OrganizationId).HasColumnType("bigint").IsRequired();
 
 
-        builder.HasOne<Role>().WithMany(x => x.Users).HasForeignKey(x => x.RoleId).HasConstraintName("FK_Role_Users");
-        
+        builder.HasOne(x => x.Role).WithMany(x => x.Users).HasForeignKey(x => x.RoleId).HasConstraintName("FK_Role_Users");
+
         builder.HasIndex(x => x.PrivateNumber).IsUnique();
         builder.HasIndex(x => x.UserName).IsUnique();
         builder.HasIndex(x => x.EmailAddress).IsUnique();
         builder.HasIndex(x => x.PhoneNumber).IsUnique();
-        
+
         builder.HasIndex(x => x.RoleId);
         builder.HasIndex(x => x.OrganizationId);
         builder.HasIndex(x => x.Status);

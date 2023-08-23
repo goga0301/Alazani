@@ -16,7 +16,7 @@ public abstract class BaseEntityConfiguration<TEntity, TKey> : IEntityTypeConfig
         }
         else
         {
-            builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
+            builder.Property(x => x.Id).HasColumnName("Id").HasColumnType("bigint").ValueGeneratedOnAdd();
         }
 
         ConfigureEntity(builder);

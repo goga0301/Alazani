@@ -2,4 +2,9 @@
 
 public class GetRoleQuery : IRequest<IApiResponse<RoleModel>>
 {
+    public int Id { get; set; }
+    public GetRoleQuery(int id)
+    {
+        Id = id;
+    }
 }

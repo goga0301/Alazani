@@ -1,11 +1,11 @@
 ﻿using Alazani.Domain.Repository;
 using FluentValidation;
 
-namespace Alazani.Application.Features.Organization.Create;
+namespace Alazani.Application.Features.Organization.Update;
 
-internal class CreateOrganizationCommandValidator : AbstractValidator<CreateOrganizationCommand>
+public class UpdateOrganizationCommandValidator : AbstractValidator<UpdateOrganizationCommand>
 {
-    public CreateOrganizationCommandValidator(IOrganizationRepository _organizationRepository)
+    public UpdateOrganizationCommandValidator(IOrganizationRepository _organizationRepository)
     {
         RuleFor(x => x.Model.Name)
             .NotEmpty().WithMessage("Name is required")

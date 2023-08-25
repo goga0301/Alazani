@@ -1,20 +1,11 @@
 ﻿using Alazani.Domain.Repository;
 using FluentValidation;
 
-namespace Alazani.Application.Features.Organization.Read;
+namespace Alazani.Application.Features.Organization.Delete;
 
-public class GetOrganizationQuery : IRequest<IApiResponse<OrganizationModel>>
+public class DeleteOrganizationCommandValidator : AbstractValidator<DeleteOrganizationCommand>
 {
-    public int Id { get; set; }
-    public GetOrganizationQuery(int id)
-    {
-        Id = id;
-    }
-}
-
-public class GetOrganizationQueryValidator : AbstractValidator<GetOrganizationQuery>
-{
-    public GetOrganizationQueryValidator(IOrganizationRepository _organizationRepository)
+    public DeleteOrganizationCommandValidator(IOrganizationRepository _organizationRepository)
     {
         RuleFor(x => x.Id)
             .NotEmpty().WithMessage("Id is required")
@@ -23,5 +14,6 @@ public class GetOrganizationQueryValidator : AbstractValidator<GetOrganizationQu
             {
                 return !(await _organizationRepository.AnyAsync(x => x.Id == id));
             }).WithMessage($"Organization with this ID does not exist");
+
     }
 }

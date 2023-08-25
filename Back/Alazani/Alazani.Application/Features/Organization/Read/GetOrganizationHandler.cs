@@ -1,5 +1,6 @@
 ﻿using Alazani.Domain.Models.Mappers;
 using Alazani.Domain.Repository;
+using FluentValidation;
 
 namespace Alazani.Application.Features.Organization.Read;
 
@@ -14,11 +15,7 @@ public class GetOrganizationHandler : IRequestHandler<GetOrganizationQuery, IApi
 
     public async Task<IApiResponse<OrganizationModel>> Handle(GetOrganizationQuery request, CancellationToken cancellationToken)
     {
-        var organization = await _organizationRepository.GetSingleAsync(x => x.Id == request.Id);
-        if (organization == null)
-        {
-            throw new OrganizationNotFoundException($"Organization by ID: {request.Id} not found");
-        }
+        var organization = (await _organizationRepository.GetSingleAsync(x => x.Id == request.Id))!;
 
         var model = organization.ToModel();
 

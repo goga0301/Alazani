@@ -1,11 +1,8 @@
-﻿using Alazani.Domain.Repository;
-using FluentValidation;
-
-namespace Alazani.Application.Features.Organization.Update;
+﻿namespace Alazani.Application.Features.Organization.Update;
 
 public class UpdateOrganizationCommandValidator : AbstractValidator<UpdateOrganizationCommand>
 {
-    public UpdateOrganizationCommandValidator(IOrganizationRepository _organizationRepository)
+    public UpdateOrganizationCommandValidator(IOrganizationRepository organizationRepository)
     {
         RuleFor(x => x.Model.Name)
             .NotEmpty().WithMessage("Name is required")
@@ -17,9 +14,9 @@ public class UpdateOrganizationCommandValidator : AbstractValidator<UpdateOrgani
         RuleFor(x => x.Model.Address)
             .MaximumLength(500).WithMessage("Address must not exceed 500 characters.");
 
-        RuleFor(x => x.Model.Name).MustAsync(async (name, cancellation) =>
+        RuleFor(x => x.Model.Name).MustAsync(async (name, _) =>
         {
-            return !(await _organizationRepository.AnyAsync(e => e.Name == name));
+            return !(await organizationRepository.AnyAsync(e => e.Name == name));
         }).WithMessage("Organization with this name already exists.");
     }
 }

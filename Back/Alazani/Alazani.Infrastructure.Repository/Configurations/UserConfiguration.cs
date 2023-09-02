@@ -1,7 +1,7 @@
 ﻿using Alazani.Domain.Entities;
+using Alazani.Infrastructure.Repository.Configurations.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Store.Infrastructure.Repository.Configurations.Base;
 
 namespace Alazani.Infrastructure.Repository.Configurations;
 

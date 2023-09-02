@@ -1,16 +1,11 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Role.Read;
+﻿namespace Alazani.Application.Features.Role.Read;
 
 public class GetRoleHandler : IRequestHandler<GetRoleQuery, IApiResponse<RoleModel>>
 {
-    private readonly IUnitOfWork _unitOfWork;
     private readonly IRoleRepository _roleRepository;
 
-    public GetRoleHandler(IUnitOfWork unitOfWork, IRoleRepository roleRepository)
+    public GetRoleHandler(IRoleRepository roleRepository)
     {
-        _unitOfWork = unitOfWork;
         _roleRepository = roleRepository;
     }
 

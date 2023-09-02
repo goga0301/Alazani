@@ -10,7 +10,7 @@ public abstract class BaseEntity<TKey> : IBaseEntity where TKey : struct
 
     public RecordStatusEnum RecordStatus { get; set; }
     public DateTime CreateDate { get; set; }
-    public string CreateUserId { get; set; }
+    public string? CreateUserId { get; set; }
 
     public void Create(string createUserId)
     {

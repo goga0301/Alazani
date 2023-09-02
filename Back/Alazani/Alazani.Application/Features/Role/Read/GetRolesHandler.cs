@@ -1,7 +1,4 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Role.Read;
+﻿namespace Alazani.Application.Features.Role.Read;
 
 public class GetRolesHandler : IRequestHandler<GetRolesQuery, IApiResponse<IEnumerable<RoleModel>>>
 {

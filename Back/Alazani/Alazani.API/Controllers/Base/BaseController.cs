@@ -7,13 +7,13 @@ namespace Alazani.API.Controllers.Base
     [Route("api/[controller]")]
     public class BaseController : ControllerBase
     {
-        protected readonly IMediator _mediator;
-        protected readonly ILogger<BaseController> _logger;
+        protected readonly IMediator Mediator;
+        protected readonly ILogger<BaseController> Logger;
 
         protected BaseController(IMediator mediator, ILogger<BaseController> logger)
         {
-            _mediator = mediator;
-            _logger = logger;
+            Mediator = mediator;
+            Logger = logger;
         }
 
     }

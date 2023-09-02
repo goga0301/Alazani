@@ -1,4 +1,4 @@
-﻿using Alazani.Helpers;
+﻿using Alazani.Shared.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Alazani.Shared;

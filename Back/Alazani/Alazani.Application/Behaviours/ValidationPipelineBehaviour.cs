@@ -1,9 +1,4 @@
-﻿using Alazani.Shared.Helpers;
-using FluentValidation;
-using FluentValidation.TestHelper;
-using System.Net;
-
-namespace Alazani.Application.Behaviours;
+﻿namespace Alazani.Application.Behaviours;
 
 public class ValidationPipelineBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
@@ -29,9 +24,9 @@ public class ValidationPipelineBehaviour<TRequest, TResponse>
         var context = new ValidationContext<TRequest>(request);
 
         var validationFailures = await Task.WhenAll(
-            _validators.Select(v => v.ValidateAsync(context)));
+            _validators.Select(v => v.ValidateAsync(context, cancellationToken)));
 
-        Error[] errors = validationFailures
+        var errors = validationFailures
             .Where(result => !result.IsValid)
             .SelectMany(result => result.Errors)
             .Where(failure => failure != null)
@@ -58,7 +53,7 @@ public class ValidationPipelineBehaviour<TRequest, TResponse>
             return (ValidationResult.WithErrors(errors) as TResult)!;
         }
 
-        object validationResult = typeof(ValidationResult<>)
+        var validationResult = typeof(ValidationResult<>)
             .GetGenericTypeDefinition()
             .MakeGenericType(typeof(TResult).GetGenericArguments()[0])
             .GetMethod(nameof(ValidationResult.WithErrors))!

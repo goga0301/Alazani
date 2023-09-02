@@ -3,7 +3,7 @@ using Alazani.Domain.Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Store.Infrastructure.Repository.Configurations.Base;
+namespace Alazani.Infrastructure.Repository.Configurations.Base;
 
 public abstract class BaseEntityConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity<TKey> where TKey : struct
 {
@@ -33,4 +33,3 @@ public abstract class BaseEntityConfiguration<TEntity, TKey> : IEntityTypeConfig
 
     public abstract void ConfigureEntity(EntityTypeBuilder<TEntity> builder);
 }
-

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Alazani.Helpers;
+namespace Alazani.Shared.Helpers;
 
 public class ExpirationTimeProvider
 {
@@ -17,7 +17,7 @@ public class ExpirationTimeProvider
         if (expirationTime.Exists())
             return TimeSpan.FromSeconds(expirationTime.Get<int>());
 
-        var defaultxpirationTime = _configuration.GetSection($"DefaultExpirationTimes").Get<DefaultExpirationTimes>() ?? throw new Exception("DefaultExpirationTimes settings does not exists"); 
+        var defaultxpirationTime = _configuration.GetSection("DefaultExpirationTimes").Get<DefaultExpirationTimes>() ?? throw new Exception("DefaultExpirationTimes settings does not exists"); 
         return TimeSpan.FromSeconds(defaultxpirationTime.GetAllAsync);
     }
 }

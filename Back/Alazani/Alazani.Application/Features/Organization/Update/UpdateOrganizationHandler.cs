@@ -1,8 +1,4 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-using System.Net;
-
-namespace Alazani.Application.Features.Organization.Update;
+﻿namespace Alazani.Application.Features.Organization.Update;
 
 public class UpdateOrganizationHandler : IRequestHandler<UpdateOrganizationCommand, IApiResponse<bool>>
 {
@@ -26,7 +22,7 @@ public class UpdateOrganizationHandler : IRequestHandler<UpdateOrganizationComma
         var entity = request.Model.ToEntity(organization);
         
         _organizationRepository.Update(entity);
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return ApiResponse<bool>.Success(true, "Organization Updated Succesfully");
     }

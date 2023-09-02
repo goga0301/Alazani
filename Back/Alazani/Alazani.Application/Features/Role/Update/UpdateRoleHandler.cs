@@ -1,7 +1,4 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Role.Update;
+﻿namespace Alazani.Application.Features.Role.Update;
 
 public class UpdateRoleHandler : IRequestHandler<UpdateRoleCommand, IApiResponse<bool>>
 {
@@ -24,7 +21,7 @@ public class UpdateRoleHandler : IRequestHandler<UpdateRoleCommand, IApiResponse
         request.Model.ToEntity(role);
 
         _roleRepository.Update(role);
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return ApiResponse<bool>.Success(true, "Role Updated Succesfully");
     }

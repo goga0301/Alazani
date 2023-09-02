@@ -1,6 +1,4 @@
-﻿using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Organization.Delete;
+﻿namespace Alazani.Application.Features.Organization.Delete;
 
 public class DeleteOrganizationHandler : IRequestHandler<DeleteOrganizationCommand, IApiResponse<bool>>
 {
@@ -21,7 +19,7 @@ public class DeleteOrganizationHandler : IRequestHandler<DeleteOrganizationComma
             throw new OrganizationNotFoundException($"Organization by ID: {request.Id} not found");
         }
         _organizationRepository.SoftDelete(organization);
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return ApiResponse<bool>.Success(true, "Organization Deleted Succesfully");
     }

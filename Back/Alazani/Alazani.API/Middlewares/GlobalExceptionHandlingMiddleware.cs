@@ -1,9 +1,6 @@
-﻿using Alazani.Helpers;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.WebUtilities;
-using System.Net;
-using System.Text;
+﻿using System.Net;
 using System.Text.Json;
+using Alazani.Shared.Helpers;
 
 namespace Alazani.API.Middlewares;
 
@@ -24,10 +21,10 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error Occured");
+            _logger.LogError(ex, "Error has occured");
 
             var response = ApiResponse.Error(ex);
-            var ErrorResponse = new
+            var errorResponse = new
             {
                 Status = (int)HttpStatusCode.InternalServerError,
                 Type = "https://httpstatuses.com/500",
@@ -36,7 +33,7 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
                 Errors = response.Messages
             };
 
-            var json = JsonSerializer.Serialize(ErrorResponse);
+            var json = JsonSerializer.Serialize(errorResponse);
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;

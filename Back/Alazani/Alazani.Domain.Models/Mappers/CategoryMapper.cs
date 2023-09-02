@@ -12,7 +12,7 @@ public static class CategoryMapper
                                  entity.Name,       
                                  entity.Description,       
                                  entity.OrganizationId,       
-                                 entity.Products?.Select(x => x.ToModel()).ToList(),       
+                                 entity.Products.Select(x => x.ToModel()).ToList(),       
                                  entity.RecordStatus,       
                                  entity.CreateDate,       
                                  entity.CreateUserId);       

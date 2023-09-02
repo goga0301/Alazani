@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-
-namespace Alazani.Helpers;
+namespace Alazani.Shared.Helpers;
 
 public interface IApiResponse
 {
@@ -37,7 +36,7 @@ public class ApiResponse : IApiResponse
         return new ApiResponse(HttpStatusCode.OK,
                message == null ? null : new List<KeyValuePair<string, string?>>()
                {
-                   new KeyValuePair<string, string?>("OK", message)
+                   new("OK", message)
                });
     }
 
@@ -45,7 +44,7 @@ public class ApiResponse : IApiResponse
     {
         return new ApiResponse(HttpStatusCode.BadRequest, new List<KeyValuePair<string, string?>>()
         {
-            new KeyValuePair<string, string?>("BadRequest",message)
+            new("BadRequest",message)
         });
     }
     public static IApiResponse BadRequest(IEnumerable<KeyValuePair<string, string?>> messages)
@@ -65,7 +64,7 @@ public class ApiResponse : IApiResponse
     {
         return new ApiResponse(HttpStatusCode.InternalServerError, new List<KeyValuePair<string, string?>>()
         {
-            new KeyValuePair<string, string?>("InternalServerError",message)
+            new("InternalServerError",message)
         });
     }
 
@@ -73,8 +72,8 @@ public class ApiResponse : IApiResponse
     {
         var messages = new List<KeyValuePair<string, string?>>()
         {
-            new KeyValuePair<string, string?>("Exception",exception.Message),
-            new KeyValuePair<string, string?>("InnerException",exception.InnerException?.Message)
+            new("Exception",exception.Message),
+            new("InnerException",exception.InnerException?.Message)
         };
         return new ApiResponse(HttpStatusCode.InternalServerError, messages);
     }
@@ -98,7 +97,7 @@ public class ApiResponse<T> : ApiResponse, IApiResponse<T>
         return new ApiResponse<T>(result, HttpStatusCode.OK,
                message == null ? null : new List<KeyValuePair<string, string?>>()
                {
-                   new KeyValuePair<string, string?>("OK", message)
+                   new("OK", message)
                });
     }
 }

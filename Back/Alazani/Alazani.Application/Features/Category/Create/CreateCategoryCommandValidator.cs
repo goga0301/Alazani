@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Alazani.Application.Features.Category.Create;
+﻿namespace Alazani.Application.Features.Category.Create;
 
 internal class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
 {

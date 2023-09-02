@@ -4,18 +4,18 @@ using Alazani.Domain.Repository.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
-using Alazani.Helpers;
+using Alazani.Shared.Helpers;
 
 
 namespace Alazani.Infrastructure.Repository.Repositories.Base;
 
 public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<TEntity>, IDisposable where TContext : DbContext where TEntity : class 
 {
-    protected readonly TContext _context;
+    protected readonly TContext Context;
 
     protected GenericRepository(TContext context)
     {
-        _context = context;
+        Context = context;
     }
 
     public async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> where, params Expression<Func<TEntity, object>>[] includes)
@@ -67,11 +67,11 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
     {
         if (trackGraph)
         {
-            _context.Set<TEntity>().Add(entity);
+            Context.Set<TEntity>().Add(entity);
         }
         else
         {
-            _context.Entry(entity).State = EntityState.Added;
+            Context.Entry(entity).State = EntityState.Added;
         }
         return Task.CompletedTask;
     }
@@ -80,7 +80,7 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
     {
         if (trackGraph)
         {
-            _context.Set<TEntity>().AddRange(entities);
+            Context.Set<TEntity>().AddRange(entities);
         }
         else
         {
@@ -97,7 +97,7 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
         {
             if (trackGraph)
             {
-                _context.Set<TEntity>().Update(entity);
+                Context.Set<TEntity>().Update(entity);
             }
             else
             {
@@ -109,7 +109,7 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
             throw new Exception("Entity not configured for soft delete");
         }
 
-        _context.Entry(entity).State = EntityState.Modified;
+        Context.Entry(entity).State = EntityState.Modified;
     }
 
     public void SoftDeleteRange(IEnumerable<TEntity> entities, bool trackGraph = false)
@@ -124,30 +124,29 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
     {
         if (trackGraph)
         {
-            _context.Set<TEntity>().Update(entity);
+            Context.Set<TEntity>().Update(entity);
         }
         else
         {
-            _context.Entry(entity).State = EntityState.Modified;
+            Context.Entry(entity).State = EntityState.Modified;
         }
 
     }
 
     public async Task SaveChangesAsync()
     {
-        await _context.SaveChangesAsync().ConfigureAwait(false);
+        await Context.SaveChangesAsync().ConfigureAwait(false);
         DetacheTrackedEntities();
     }
 
     public void Dispose()
     {
-        //_context?.Dispose();
         GC.SuppressFinalize(this);
     }
 
     private void DetacheTrackedEntities()
     {
-        foreach (EntityEntry entityEntry in _context.ChangeTracker.Entries())
+        foreach (EntityEntry entityEntry in Context.ChangeTracker.Entries())
         {
             entityEntry.State = EntityState.Detached;
         }
@@ -155,7 +154,7 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
 
     private IQueryable<TEntity> GetQueryable(Expression<Func<TEntity, bool>>[]? wheres = null, Expression<Func<TEntity, object>>[]? includes = null)
     {
-        IQueryable<TEntity> query = _context.Set<TEntity>().AsNoTracking();
+        IQueryable<TEntity> query = Context.Set<TEntity>().AsNoTracking();
 
         if (wheres != null && wheres.Any())
         {
@@ -163,8 +162,8 @@ public abstract class GenericRepository<TContext, TEntity> : IGenericRepository<
 
             for (int i = 1; i < wheres.Length; i++)
             {
-                var @where = wheres[0];
-                expr = expr.And(@where);
+                var where = wheres[0];
+                expr = expr.And(where);
             }
 
             query = query.Where(expr);

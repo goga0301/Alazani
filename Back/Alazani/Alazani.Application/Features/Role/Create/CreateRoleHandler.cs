@@ -1,7 +1,4 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Role.Create;
+﻿namespace Alazani.Application.Features.Role.Create;
 
 public class CreateRoleHandler : IRequestHandler<CreateRoleCommand, IApiResponse<int>>
 {
@@ -18,7 +15,7 @@ public class CreateRoleHandler : IRequestHandler<CreateRoleCommand, IApiResponse
         var entity = request.Model.ToEntity();
 
         await _roleRepository.CreateAsync(entity);
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return ApiResponse<int>.Success(entity.Id, "Role Created Succesfully");
     

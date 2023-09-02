@@ -1,5 +1,4 @@
-﻿using Alazani.Helpers;
-using System.Net;
+﻿using System.Net;
 
 namespace Alazani.Shared.Helpers;
 
@@ -14,7 +13,7 @@ public sealed class ValidationResult : ApiResponse, IValidationResult
     }
     public Error[] Errors { get; }
 
-    public static ValidationResult WithErrors(Error[] errors) => new ValidationResult(errors);
+    public static ValidationResult WithErrors(Error[] errors) => new(errors);
 }
 
 
@@ -29,7 +28,7 @@ public sealed class ValidationResult<TValue> : ApiResponse<TValue>, IValidationR
     }
     public Error[] Errors { get; }
 
-    public static ValidationResult<TValue> WithErrors(Error[] errors) => new ValidationResult<TValue>(errors);
+    public static ValidationResult<TValue> WithErrors(Error[] errors) => new(errors);
 }
 
 

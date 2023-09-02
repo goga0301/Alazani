@@ -14,6 +14,6 @@ public class OrganizationRepository : GenericRepository<AlazaniDbContext, Organi
 
     public async Task<bool> IsNameUnique(string name)
     {
-        return !(await _context.Organizations.AnyAsync(x => x.Name == name));
+        return !(await Context.Organizations.AnyAsync(x => x.Name == name));
     }
 }

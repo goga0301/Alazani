@@ -1,5 +1,5 @@
 ﻿using Alazani.Domain.Repository;
-using Alazani.Helpers;
+using Alazani.Shared.Helpers;
 using Alazani.Infrastructure.Repository.DbContexts;
 using Alazani.Infrastructure.Repository.Repositories;
 using Alazani.Infrastructure.Repository.Repositories.Base;

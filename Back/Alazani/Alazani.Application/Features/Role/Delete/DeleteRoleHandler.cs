@@ -1,6 +1,4 @@
-﻿using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Role.Delete;
+﻿namespace Alazani.Application.Features.Role.Delete;
 
 public class DeleteRoleHandler : IRequestHandler<DeleteRoleCommand, IApiResponse<bool>>
 {
@@ -21,7 +19,7 @@ public class DeleteRoleHandler : IRequestHandler<DeleteRoleCommand, IApiResponse
             throw new RoleNotFoundException($"Role by ID: {request.Id} not found");
         }
         _roleRepository.SoftDelete(role);
-        await _unitOfWork.SaveChangesAsync();
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return ApiResponse<bool>.Success(true, "Role Deleted Succesfully");
 

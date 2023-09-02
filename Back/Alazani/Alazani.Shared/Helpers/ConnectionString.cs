@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Alazani.Helpers;
+namespace Alazani.Shared.Helpers;
 
 public interface IConnectionString
 {

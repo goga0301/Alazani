@@ -1,5 +1,5 @@
 ﻿global using Alazani.Domain.Models.Domain;
-global using Alazani.Helpers;
+global using Alazani.Shared.Helpers;
 global using MediatR;
 
 global using Alazani.Application.Features.Category.Create;
@@ -33,3 +33,7 @@ global using Alazani.Application.Features.Organization.Delete;
 global using Alazani.Application.Features.Product.Delete;
 global using Alazani.Application.Features.Role.Delete;
 global using Alazani.Application.Features.User.Delete;
+
+global using Alazani.Domain.Models.Mappers;
+global using Alazani.Domain.Repository;
+global using FluentValidation;

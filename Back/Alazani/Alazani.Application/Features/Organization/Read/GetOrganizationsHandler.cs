@@ -1,7 +1,4 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-
-namespace Alazani.Application.Features.Organization.Read;
+﻿namespace Alazani.Application.Features.Organization.Read;
 
 public class GetOrganizationsHandler : IRequestHandler<GetOrganizationsQuery, IApiResponse<IEnumerable<OrganizationModel>>>
 {

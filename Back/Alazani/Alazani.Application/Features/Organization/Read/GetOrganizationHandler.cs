@@ -1,8 +1,4 @@
-﻿using Alazani.Domain.Models.Mappers;
-using Alazani.Domain.Repository;
-using FluentValidation;
-
-namespace Alazani.Application.Features.Organization.Read;
+﻿namespace Alazani.Application.Features.Organization.Read;
 
 public class GetOrganizationHandler : IRequestHandler<GetOrganizationQuery, IApiResponse<OrganizationModel>>
 {

@@ -2,9 +2,23 @@
 
 public class GetCategoryHandler : IRequestHandler<GetCategoryQuery, IApiResponse<CategoryModel>>
 {
-    public Task<IApiResponse<CategoryModel>> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
+    private readonly ICategoryRepository _categoryRepository;
+
+    public GetCategoryHandler(ICategoryRepository categoryRepository)
     {
-        throw new NotImplementedException();
+        _categoryRepository = categoryRepository;
+    }
+
+    public async Task<IApiResponse<CategoryModel>> Handle(GetCategoryQuery request, CancellationToken cancellationToken)
+    {
+        var category = await _categoryRepository.GetSingleAsync(x => x.Id == request.Id);
+        if(category == null)
+        {
+            throw new Exception($"Category by ID:{request.Id} Not Found");
+        }
+
+        return ApiResponse<CategoryModel>.Success(category.ToModel());
+
     }
 }
 

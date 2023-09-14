@@ -2,8 +2,18 @@
 
 public class GetCategoriesHandler : IRequestHandler<GetCategoriesQuery, IApiResponse<IEnumerable<CategoryModel>>>
 {
-    public Task<IApiResponse<IEnumerable<CategoryModel>>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
+    private readonly ICategoryRepository _categoryRepository;
+
+    public GetCategoriesHandler(ICategoryRepository categoryRepository)
     {
-        throw new NotImplementedException();
+        _categoryRepository = categoryRepository;
+    }
+
+    public async Task<IApiResponse<IEnumerable<CategoryModel>>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
+    {
+        var categories = await _categoryRepository.GetAllAsync();
+
+        return ApiResponse<IEnumerable<CategoryModel>>
+            .Success(categories.Select(x => x.ToModel()));
     }
 }

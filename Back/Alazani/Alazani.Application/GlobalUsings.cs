@@ -36,4 +36,5 @@ global using Alazani.Application.Features.User.Delete;
 
 global using Alazani.Domain.Models.Mappers;
 global using Alazani.Domain.Repository;
+global using Alazani.Domain.Entities;
 global using FluentValidation;
